@@ -39,7 +39,7 @@ Turn raw thoughts into **premium LinkedIn posts** with AI — optimized for enga
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/your-username/linkedforge-ai.git
+git clone https://github.com/asadujaman74/linkedforge-ai.git
 cd linkedforge-ai
 python -m venv venv
 source venv/bin/activate   # (Windows: venv\Scripts\activate)
