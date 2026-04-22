@@ -25,7 +25,7 @@ Turn raw thoughts into **premium LinkedIn posts** with AI — optimized for enga
 * **AI API:** Groq (LLaMA 3)
 
 ---
-
+<!--
 ## 📸 Preview
 
 > Add screenshots here later 👇
@@ -35,7 +35,7 @@ Turn raw thoughts into **premium LinkedIn posts** with AI — optimized for enga
 * Dark Mode
 
 ---
-
+-->
 ## ⚙️ Installation
 
 ```bash
@@ -69,7 +69,7 @@ Open:
 👉 http://127.0.0.1:8080/
 
 ---
-
+<!--
 ## 📂 Project Structure
 
 ```
@@ -83,7 +83,7 @@ templates/
 ```
 
 ---
-
+-->
 ## 🧠 How It Works
 
 1. User inputs raw thought
