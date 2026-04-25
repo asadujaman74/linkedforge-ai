@@ -39,6 +39,43 @@ body {
 }
 
 /* =========================
+   HISTORY BUTTON FIXED
+========================= */
+
+.history-btn,
+.history-btn:visited{
+    background: transparent !important;
+    color: var(--text) !important;
+    border:1px solid var(--border) !important;
+    border-radius:10px;
+    font-weight:500;
+    transition:.25s ease;
+}
+
+.history-btn:hover,
+.history-btn:focus,
+.history-btn:active{
+    background: rgba(79,140,255,.12) !important;
+    border-color:#4f8cff !important;
+    color: var(--text) !important;
+    box-shadow:none !important;
+}
+
+/* LIGHT MODE FIX */
+body.light .history-btn,
+body.light .history-btn:visited{
+    color:#222 !important;
+    border:1px solid rgba(0,0,0,.18) !important;
+    background: transparent !important;
+}
+
+body.light .history-btn:hover,
+body.light .history-btn:focus{
+    background: rgba(79,140,255,.10) !important;
+    color:#222 !important;
+}
+
+/* =========================
    4. CARD / GLASS BOX
 ========================= */
 .glass {
@@ -189,4 +226,37 @@ body.light .tool-btn {
     .fixed-height {
         height: auto;
     }
+}
+
+
+/* =========================
+   GENERATE BUTTON PREMIUM
+========================= */
+
+.generate-btn,
+.generate-btn:visited{
+    border:none !important;
+    border-radius:10px;
+    font-weight:600;
+    color:#fff !important;
+
+    background: linear-gradient(
+        90deg,
+        #0d6efd,
+        #4f8cff,
+        #7aa7ff
+    );
+
+    transition:.25s ease;
+}
+
+.generate-btn:hover,
+.generate-btn:focus{
+    transform: translateY(-1px);
+    box-shadow:0 8px 20px rgba(79,140,255,.30);
+    color:#fff !important;
+}
+
+.generate-btn:active{
+    transform:scale(.98);
 }
