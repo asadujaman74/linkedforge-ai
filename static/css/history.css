@@ -10,27 +10,92 @@
     gap: 16px;
 }
 
-/* CARD */
+/* =========================
+   HISTORY CARD (UPDATED)
+========================= */
+
 .history-card {
     flex: 0 0 calc(50% - 8px);
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 16px;
     padding: 14px;
+
     display: flex;
     flex-direction: column;
+
+    /* NEW ✨ */
+    transition: 0.25s ease;
 }
 
-/* POST BOX */
+/* NEW hover effect */
+.history-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+    border-color: rgba(79,140,255,0.4);
+}
+
+/* =========================
+   POST BOX (UPDATED)
+========================= */
+
 .post-box {
+    position: relative;
     background: rgba(0,0,0,0.2);
     border-radius: 12px;
     padding: 10px;
+
     white-space: pre-wrap;
     line-height: 1.6;
     font-size: 14px;
+
     max-height: 180px;
     overflow-y: auto;
+
+    /* NEW ✨ smooth feel */
+    scroll-behavior: smooth;
+
+        overflow-y: auto;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE / Edge old */
+    -ms-overflow-style: none;
+}
+
+/* Chrome / Safari / Edge */
+.post-box::-webkit-scrollbar{
+    width: 0px;
+    background: transparent;
+}
+/* SCROLL HINT (FIXED PROPER OVERLAY) */
+
+/* SCROLL HINT (IMPROVED) */
+.post-box::after{
+    content: "↓";
+
+    position: absolute;
+    right: 10px;
+    bottom: 8px;
+
+    font-size: 11px;
+    font-weight: 500;
+
+    color: var(--text);
+
+    background: rgba(187, 184, 9, 0.35);
+    padding: 3px 8px;
+    border-radius: 8px;
+
+    opacity: 0.85;
+
+    pointer-events: none;
+    backdrop-filter: blur(4px);
+}
+/* light mode fix */
+body.light .post-box{
+    background: rgba(0,0,0,0.05);
 }
 
 /* ACTION ICONS */

@@ -22,7 +22,7 @@ def generate_post(thought, tone, audience):
     - Use spacing (short paragraphs)
     - Add emojis naturally (not too many)
     - Make hook powerful (1 line)
-    - Main content should have bullet points OR short lines
+    - Main content should have bullet points OR short lines OR use relavent emoji 
     - Add storytelling feel if possible
     - End with strong CTA
     - Add 5 relevant hashtags at the end
@@ -32,9 +32,9 @@ def generate_post(thought, tone, audience):
     🔥 Hook (1 line)
 
     Main Content:
-    - Point 1
-    - Point 2
-    - Point 3
+    👉 Point 1
+    👉 Point 2
+    👉 Point 3
 
     CTA (1–2 lines)
 
