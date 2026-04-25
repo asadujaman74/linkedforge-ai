@@ -11,94 +11,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="{% static 'css/history.css' %}">
 
-<style>
-
-/* NAVBAR */
-.navbar {
-    background: transparent;
-}
-
-/* GRID */
-.history-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
-}
-
-/* CARD */
-.history-card {
-    flex: 0 0 calc(50% - 8px);
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 14px;
-    display: flex;
-    flex-direction: column;
-}
-
-/* POST BOX */
-.post-box {
-    background: rgba(0,0,0,0.2);
-    border-radius: 12px;
-    padding: 10px;
-    white-space: pre-wrap;
-    line-height: 1.6;
-    font-size: 14px;
-    max-height: 180px;
-    overflow-y: auto;
-}
-
-/* ACTION ICONS */
-.tool-btn {
-    background: rgba(255,255,255,0.08);
-    padding: 8px 12px;
-    border-radius: 50px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.tool-btn:hover {
-    transform: scale(1.1);
-}
-
-.copied {
-    background: #28a745 !important;
-    color: #fff;
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .history-card {
-        flex: 0 0 100%;
-    }
-}
-
-
-/* BACK HOME BUTTON */
-.back-home-btn,
-.back-home-btn:visited{
-    background: transparent !important;
-    color: var(--text) !important;
-    border:1px solid var(--border) !important;
-    border-radius:10px;
-    font-weight:500;
-    transition:.25s ease;
-}
-
-.back-home-btn:hover,
-.back-home-btn:focus{
-    background: rgba(79,140,255,.12) !important;
-    border-color:#4f8cff !important;
-    color: var(--text) !important;
-}
-
-/* light mode fix */
-body.light .back-home-btn{
-    color:#222 !important;
-    border:1px solid rgba(0,0,0,.18) !important;
-}
-</style>
 </head>
 
 <body>
@@ -120,14 +34,20 @@ body.light .back-home-btn{
 <div class="container py-4">
 
     <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
-        <div>
-            <h2 class="mb-1">📚 Recent Generated Posts</h2>
-            <p class="muted mb-0">Your Last 5 AI LinkedIn post history</p>
+        <div class="history-heading">
+            <h2 class="history-title mb-1">
+                📚 Recent 
+                <span class="gradient-text">Generated Posts</span>
+            </h2>
+
+            <p class="history-sub mb-0">
+                Last 5 AI-crafted LinkedIn post history . . . . 
+            </p>
         </div>
 
-       <a href="/" class="back-home-btn btn btn-sm">
-    ← Back Home
-</a>
+        <a href="/" class="back-home-btn btn btn-sm">
+            ← Back Home
+        </a>
     </div>
 
     <!-- GRID -->
@@ -178,42 +98,8 @@ body.light .back-home-btn{
 </div>
 
 <!-- JS -->
-<script>
+<script src="{% static 'js/history.js' %}"></script>
 
-// THEME
-document.getElementById('themeToggle').addEventListener('click', () => {
-    document.body.classList.toggle('light');
-});
-
-// COPY + EDIT per card
-document.querySelectorAll('.history-card').forEach(card => {
-
-    const post = card.querySelector('.history-post');
-    const copyBtn = card.querySelector('.copyBtn');
-    const editBtn = card.querySelector('.editBtn');
-
-    // COPY
-    copyBtn.addEventListener('click', () => {
-        navigator.clipboard.writeText(post.innerText);
-
-        copyBtn.classList.add('copied');
-        copyBtn.innerHTML = '<i class="fa-solid fa-check"></i>';
-
-        setTimeout(() => {
-            copyBtn.classList.remove('copied');
-            copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-        }, 1000);
-    });
-
-    // EDIT
-    editBtn.addEventListener('click', () => {
-        post.contentEditable = true;
-        post.focus();
-    });
-
-});
-
-</script>
 
 </body>
 </html>
