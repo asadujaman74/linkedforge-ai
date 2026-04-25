@@ -1,7 +1,15 @@
 // THEME
-document.getElementById('themeToggle').addEventListener('click', () => {
+const toggle = document.getElementById('themeToggle');
+
+toggle.addEventListener('click', () => {
     document.body.classList.toggle('light');
+
+    toggle.innerHTML =
+        document.body.classList.contains('light')
+        ? '<i class="fa-solid fa-sun"></i>'
+        : '<i class="fa-solid fa-moon"></i>';
 });
+
 
 // COPY + EDIT per card
 document.querySelectorAll('.history-card').forEach(card => {
@@ -20,7 +28,7 @@ document.querySelectorAll('.history-card').forEach(card => {
         setTimeout(() => {
             copyBtn.classList.remove('copied');
             copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i>';
-        }, 1000);
+        },1000);
     });
 
     // EDIT

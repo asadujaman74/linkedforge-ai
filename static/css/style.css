@@ -32,12 +32,24 @@ body {
 }
 
 /* =========================
-   3. NAVBAR
+   3. NAVBAR  ✅ UPDATED ONLY
 ========================= */
-.navbar {
-    background: transparent;
+
+.navbar{
+    background: transparent !important;
+
+    /* subtle bottom divider */
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+
+    /* remove bootstrap default weird spacing issues */
+    padding-top: 12px;
+    padding-bottom: 12px;
 }
 
+/* light mode divider */
+body.light .navbar{
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
 /* =========================
    HISTORY BUTTON FIXED
 ========================= */
