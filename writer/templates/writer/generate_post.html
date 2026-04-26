@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Home - LinkedForge</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar p-3">
+<div class="container d-flex justify-content-between align-items-center">
+
+    <a href="/" style="text-decoration:none; color:inherit;">
+        <h4 class="mb-0">🚀 LinkedForge</h4>
+    </a>
+
+    <div class="toggle" id="themeToggle">
+        <i class="fa-solid fa-moon"></i>
+    </div>
+
+</div>
+</nav>
+
+
+<div class="container text-center py-4">
+
+    <h3 class="hero-title">
+        Turn raw thoughts into  
+        <span class="gradient-text">premium LinkedIn posts</span>
+    </h3>
+
+    <p class="hero-sub">Powered by AI — crafted for reach, clarity & engagement 🚀</p>
+</div>
+
+<div class="container py-4">
+<div class="row g-4 align-items-stretch">
+<!-- LEFT -->
+<div class="col-lg-5 d-flex">
+    <div class="glass w-100 d-flex flex-column fixed-height">
+
+        <form method="post" class="d-flex flex-column h-100">
+            {% csrf_token %}
+
+            <!-- FORM FIELDS -->
+            <div class="flex-grow">
+                {{ form.as_p }}
+            </div>
+
+            <!-- BUTTON -->
+            <div class="d-flex gap-2">
+                
+                <button class="generate-btn btn btn-sm flex-fill">
+                    Generate Post
+                </button>
+
+                <a href="/history/" class="history-btn btn btn-sm flex-fill text-center">
+                    <i class="fa-solid fa-clock-rotate-left me-1"></i>
+                    History
+                </a>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<!-- RIGHT -->
+<div class="col-lg-7 d-flex">
+    <div class="glass w-100 d-flex flex-column fixed-height">
+
+        <!-- TITLE -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <h5>✨ Generated Post</h5>
+        </div>
+
+        <!-- OUTPUT -->
+        <div id="generatedPost" class="output flex-grow" style="white-space: pre-wrap; line-height: 1.5;">{% if output %}{{ output }}{% else %}<span style="opacity:0.6;">Your generated LinkedIn post will appear here...</span>{% endif %}</div>
+
+        <!-- ICONS -->
+        <div class="d-flex gap-3 mt-3">
+            <div id="copyBtn" class="tool-btn">
+                <i class="fa-regular fa-copy"></i>
+            </div>
+
+            <div id="editBtn" class="tool-btn">
+                <i class="fa-regular fa-pen-to-square"></i>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</div>
+</div>
+
+
+<!-- ================= Footer Section ================= -->
+<footer class="site-footer mt-5">
+    <div class="container py-4">
+
+        <div class="row g-4 align-items-center">
+
+            <div class="col-md-4">
+                <h5 class="mb-2">
+                    🚀 LinkedForge AI
+                </h5>
+
+                <p class="footer-text mb-0">
+                    Turn raw thoughts into premium LinkedIn posts.
+                </p>
+            </div>
+
+
+            <div class="col-md-4 text-md-center">
+                <a href="/" class="footer-link">Home</a>
+                <a href="/history/" class="footer-link">History</a>
+                <a href="https://github.com/asadujaman74/linkedforge-ai"
+                   class="footer-link"
+                   target="_blank">
+                   GitHub
+                </a>
+            </div>
+
+
+            <div class="col-md-4 text-md-end">
+                <p class="footer-text mb-1">
+                    Built with Django + OpenAI
+                </p>
+
+                <small class="footer-muted">
+                    © 2026 LinkedForge
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+
+<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

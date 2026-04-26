@@ -55,6 +55,151 @@ body {
 body.light .navbar{
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
+
+.navbar a:hover h4{
+    color:#4f8cff;
+    transition:0.2s ease;
+}
+
+/* =========================
+ HERO
+========================= */
+/* =========================
+ HERO (CLEAN SAAS FINAL)
+========================= */
+
+.hero-section{
+    padding:70px 0 40px;
+}
+
+/* container */
+.hero-wrap{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+/* =========================
+ FLOATING ICONS (CLEAN)
+========================= */
+
+.hero-float{
+    position:absolute;
+    font-size:20px;
+    opacity:0.12;
+    animation:float 6s ease-in-out infinite;
+    pointer-events:none;
+}
+
+/* positions */
+.f1{ top:20px; left:40px; color:#0a66c2; }
+.f2{ top:60px; right:80px; color:#4f8cff; }
+.f3{ bottom:40px; left:90px; color:#f97316; }
+.f4{ bottom:20px; right:40px; color:#22c55e; }
+.f5{ top:120px; left:50%; color:#facc15; }
+
+/* animation */
+@keyframes float{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0); }
+}
+
+/* =========================
+ TEXT STYLE
+========================= */
+
+.hero-badge{
+    display:inline-block;
+    padding:8px 16px;
+    border-radius:50px;
+
+    background:rgba(79,140,255,.08);
+    border:1px solid var(--border);
+
+    font-size:13px;
+    margin-bottom:25px;
+    opacity:0.9;
+}
+
+.hero-main{
+    font-size:52px;
+    font-weight:800;
+    line-height:1.2;
+    margin-bottom:18px;
+}
+
+.hero-lead{
+    font-size:17px;
+    color:var(--muted);
+    max-width:650px;
+    margin:auto;
+    line-height:1.7;
+}
+
+/* =========================
+ BUTTONS (FINAL MODERN)
+========================= */
+
+.hero-actions{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+}
+
+/* PRIMARY */
+.hero-primary{
+    background:linear-gradient(135deg,#0d6efd,#4f8cff);
+    color:white;
+
+    padding:12px 26px;
+    border-radius:14px;
+
+    font-weight:600;
+    border:none;
+
+    box-shadow:0 10px 25px rgba(13,110,253,.25);
+
+    transition:all .25s ease;
+}
+
+.hero-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(13,110,253,.35);
+    color:white;
+}
+
+/* SECONDARY */
+.hero-secondary{
+    background:rgba(255,255,255,0.04);
+    border:1px solid var(--border);
+    color:var(--text);
+
+    padding:12px 22px;
+    border-radius:14px;
+
+    font-weight:600;
+
+    transition:all .25s ease;
+}
+
+.hero-secondary:hover{
+    border-color:#4f8cff;
+    transform:translateY(-3px);
+    background:rgba(79,140,255,0.08);
+}
+
+/* =========================
+ RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+    .hero-main{
+        font-size:40px;
+    }
+}
 /* =========================
    HISTORY BUTTON FIXED
 ========================= */

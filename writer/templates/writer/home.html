@@ -18,86 +18,73 @@
 
 <!-- NAVBAR -->
 <nav class="navbar p-3">
-<div class="container d-flex justify-content-between">
-    <h4>🚀 LinkedForge</h4>
+<div class="container d-flex justify-content-between align-items-center">
+
+    <a href="/" style="text-decoration:none; color:inherit;">
+        <h4 class="mb-0">🚀 LinkedForge</h4>
+    </a>
 
     <div class="toggle" id="themeToggle">
         <i class="fa-solid fa-moon"></i>
     </div>
+
 </div>
 </nav>
 
-<div class="container text-center py-4">
+<!-- HERO SECTION -->
 
-    <h3 class="hero-title">
-        Turn raw thoughts into  
-        <span class="gradient-text">premium LinkedIn posts</span>
-    </h3>
+<section class="hero-section">
 
-    <p class="hero-sub">Powered by AI — crafted for reach, clarity & engagement 🚀</p>
+<div class="container">
+
+<div class="text-center hero-wrap position-relative">
+
+    <!-- floating icons (subtle, not messy) -->
+<!-- floating subtle icons -->
+<i class="fa-brands fa-linkedin hero-float f1"></i>
+<i class="fa-solid fa-wand-magic-sparkles hero-float f2"></i>
+<i class="fa-solid fa-pen-nib hero-float f3"></i>
+<i class="fa-solid fa-chart-line hero-float f4"></i>
+<i class="fa-solid fa-bolt hero-float f5"></i>
+
+    <!-- badge -->
+    <span class="hero-badge">
+        ⚡ AI Powered LinkedIn Writer
+    </span>
+
+    <!-- headline -->
+    <h1 class="hero-main">
+        Turn Ideas Into <br>
+        <span class="gradient-text">
+            Viral LinkedIn Posts
+        </span>
+    </h1>
+
+    <p class="hero-lead">
+        Transform raw thoughts into engaging, structured LinkedIn content
+        powered by AI storytelling.
+    </p>
+
+<!-- CTA -->
+<div class="hero-actions">
+
+    <a href="/generate-post/" class="btn hero-primary">
+        <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+        Generate Post
+    </a>
+
+    <a href="/history/" class="btn hero-secondary">
+        <i class="fa-solid fa-clock-rotate-left me-2"></i>
+        View History
+    </a>
+
 </div>
 
-<div class="container py-4">
-<div class="row g-4 align-items-stretch">
-<!-- LEFT -->
-<div class="col-lg-5 d-flex">
-    <div class="glass w-100 d-flex flex-column fixed-height">
-
-        <form method="post" class="d-flex flex-column h-100">
-            {% csrf_token %}
-
-            <!-- FORM FIELDS -->
-            <div class="flex-grow">
-                {{ form.as_p }}
-            </div>
-
-            <!-- BUTTON -->
-            <div class="d-flex gap-2">
-                
-                <button class="generate-btn btn btn-sm flex-fill">
-                    Generate Post
-                </button>
-
-                <a href="/history/" class="history-btn btn btn-sm flex-fill text-center">
-                    <i class="fa-solid fa-clock-rotate-left me-1"></i>
-                    History
-                </a>
-
-            </div>
-
-        </form>
-
-    </div>
-</div>
-
-<!-- RIGHT -->
-<div class="col-lg-7 d-flex">
-    <div class="glass w-100 d-flex flex-column fixed-height">
-
-        <!-- TITLE -->
-        <div class="d-flex justify-content-between align-items-center mb-2">
-            <h5>✨ Generated Post</h5>
-        </div>
-
-        <!-- OUTPUT -->
-        <div id="generatedPost" class="output flex-grow" style="white-space: pre-wrap; line-height: 1.5;">{% if output %}{{ output }}{% else %}<span style="opacity:0.6;">Your generated LinkedIn post will appear here...</span>{% endif %}</div>
-
-        <!-- ICONS -->
-        <div class="d-flex gap-3 mt-3">
-            <div id="copyBtn" class="tool-btn">
-                <i class="fa-regular fa-copy"></i>
-            </div>
-
-            <div id="editBtn" class="tool-btn">
-                <i class="fa-regular fa-pen-to-square"></i>
-            </div>
-        </div>
-
-    </div>
 </div>
 
 </div>
-</div>
+
+</section>
 
 
 <!-- ================= FEATURES SECTION ================= -->

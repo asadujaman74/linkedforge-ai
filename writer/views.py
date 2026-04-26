@@ -7,6 +7,9 @@ from .services import generate_post
 from .models import PostHistory
 
 
+def index(request):
+    return render(request, 'writer/home.html')
+
 def home(request):
     form = PostForm()
     output = request.session.pop('generated_output', None)
@@ -33,7 +36,7 @@ def home(request):
             request.session['generated_output'] = output
             return redirect('home')
 
-    return render(request, 'writer/home.html', {
+    return render(request, 'writer/generate_post.html', {
         'form': form,
         'output': output,
     })
