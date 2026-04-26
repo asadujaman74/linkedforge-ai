@@ -64,9 +64,6 @@ body.light .navbar{
 /* =========================
  HERO
 ========================= */
-/* =========================
- HERO (CLEAN SAAS FINAL)
-========================= */
 
 .hero-section{
     padding:70px 0 40px;
@@ -549,4 +546,33 @@ display:none;
 
 .footer-link:hover{
     color:#4f8cff;
+}
+
+
+
+/* wrapper */
+.hero-icons-wrap{
+    position:relative;
+}
+
+/* base icon style */
+.hero-icon{
+    position:absolute;
+    font-size:20px;
+    opacity:0.12;
+    pointer-events:none;
+    animation: heroFloat 6s ease-in-out infinite;
+}
+
+/* positions around text */
+.h1{ top:10px; left:15%; color:#0a66c2; }
+.h2{ top:30px; right:15%; color:#4f8cff; }
+.h3{ bottom:10px; left:25%; color:#f97316; }
+.h4{ bottom:5px; right:25%; color:#22c55e; }
+.h5{ top:50%; left:5%; transform:translateY(-50%); color:#facc15; }
+
+@keyframes heroFloat{
+    0%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+    100%{ transform:translateY(0); }
 }
