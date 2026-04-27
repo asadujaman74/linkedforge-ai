@@ -38,7 +38,11 @@ def home(request):
                 return redirect('home')
 
             except Exception as e:
+                import traceback
+
                 print("GENERATE ERROR:", e)
+                print(traceback.format_exc())   # ✅ THIS IS WHAT YOU ASKED
+
                 output = "Something went wrong while generating post 😅"
 
     return render(request, 'writer/generate_post.html', {
