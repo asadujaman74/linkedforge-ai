@@ -22,31 +22,37 @@ def home(request):
             tone = form.cleaned_data['tone']
             audience = form.cleaned_data['audience']
 
-            # AI generate
-            output = generate_post(thought, tone, audience)
+            try:
+                # AI generate
+                output = generate_post(thought, tone, audience)
 
-            # save history
-            PostHistory.objects.create(
-                raw_thought=thought,
-                tone=tone,
-                audience=audience,
-                generated_post=output
-            )
+                # save history
+                PostHistory.objects.create(
+                    raw_thought=thought,
+                    tone=tone,
+                    audience=audience,
+                    generated_post=output
+                )
 
-            request.session['generated_output'] = output
-            return redirect('home')
+                request.session['generated_output'] = output
+                return redirect('home')
+
+            except Exception as e:
+                print("GENERATE ERROR:", e)
+                output = "Something went wrong while generating post 😅"
 
     return render(request, 'writer/generate_post.html', {
         'form': form,
         'output': output,
     })
 
-
 def history(request):
-    # keep only latest 5 in database
-    extra_posts = PostHistory.objects.order_by('-created_at')[5:]
-    if extra_posts:
-        PostHistory.objects.filter(id__in=[p.id for p in extra_posts]).delete()
+    try:
+        posts = PostHistory.objects.order_by('-created_at')[:5]
+    except Exception as e:
+        print("HISTORY ERROR:", e)
+        posts = []
 
-    posts = PostHistory.objects.order_by('-created_at')[:5]
-    return render(request, 'writer/history.html', {'posts': posts})
+    return render(request, 'writer/history.html', {
+        'posts': posts
+    })
