@@ -35,7 +35,7 @@ def home(request):
                 )
 
                 request.session['generated_output'] = output
-                return redirect('home')
+                return redirect('generate-post')
 
             except Exception as e:
                 import traceback
