@@ -28,9 +28,9 @@ SECRET_KEY = 'django-insecure-or)ejdp5oe5ji+zn=(&py0dx6a%3ub0x#^y4&*^em!#id$0=p0
 GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  #whitenoise middleware
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -85,6 +86,8 @@ DATABASES = {
         'NAME': BASE_DIR / os.getenv('DB_NAME'),
     }
 }
+
+
 
 
 # Password validation
@@ -126,3 +129,6 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [BASE_DIR / "static",]
 
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
